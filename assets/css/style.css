@@ -1,0 +1,29 @@
+body {
+	background: url("../images/triangular.png");
+	font-family: 'Roboto Slab', serif;
+	color: #245c20;
+}
+
+.btn-default {
+	background: #252c48;
+	color: #6390a5;
+}
+
+.btn-default:hover {
+	background-color: #75143f;
+	color: #ffc212;
+}
+
+h1{
+	color:  #75143f;
+	font-family: 'Abril Fatface', cursive;
+	font-size: 40px;
+}
+
+.timer {
+	color: #ffc212;
+}
+
+.result {
+	color: #75143f ;
+}
