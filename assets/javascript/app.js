@@ -66,7 +66,7 @@ var countdown = {
 
         } else {
             clearInterval(intervalId);
-            countdown.lose();
+            countdown.timesOut();
 
         }
 
@@ -107,12 +107,23 @@ var countdown = {
         wins++
     },
 
+    //when wrong answer is selected
     lose: function() {
         var rightAnswer = listOfQuestions[displayedQuestion].correctAnswer - 1;
         $("#answers").html("<h2 class = 'text-center result'> Wrong!</h2> <h3 class = 'text-center result'>The correct answer was: " + listOfQuestions[displayedQuestion].answerChoices[rightAnswer] + "</h3>");
 
         losses++;
         timeOutID = window.setTimeout(countdown.reset, 1000);
+    },
+
+    //when time runs out
+    timesOut: function() {
+    	var rightAnswer = listOfQuestions[displayedQuestion].correctAnswer - 1;
+        $("#answers").html("<h2 class = 'text-center result'> Time's Up!</h2> <h3 class = 'text-center result'>The correct answer was: " + listOfQuestions[displayedQuestion].answerChoices[rightAnswer] + "</h3>");
+
+        losses++;
+        timeOutID = window.setTimeout(countdown.reset, 1000);
+
     },
 
     //Prints the score
